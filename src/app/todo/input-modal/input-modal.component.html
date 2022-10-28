@@ -1,0 +1,18 @@
+<div [attr.id]="!inputModal" class="input-modal-container">
+    <header class="input-modal-header"><button (click)="toggleModal()">back</button></header>
+    <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="activity">
+                activity
+            </label>
+            <input id="activity" type="text" formControlName="activity">
+        </div>
+        <div>
+            <label for="priority">
+                priority
+            </label>
+            <input id="priority" type="number" formControlName="priority">
+        </div>
+        <button type="submit">submit</button>
+    </form>
+</div>

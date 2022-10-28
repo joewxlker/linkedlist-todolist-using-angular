@@ -1,0 +1,35 @@
+.input-modal-container#false {
+    display: none;
+}
+
+.input-modal-container#true {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    width: 60vw;
+    color: white;
+    z-index: 12;
+    top: 0rem;
+    background-color: rgba(30, 30, 30, 1);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30rem;
+}
+
+.input-modal-header {
+    width: 97.5%;
+    height: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}

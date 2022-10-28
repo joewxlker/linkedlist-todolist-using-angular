@@ -1,0 +1,62 @@
+<main class="app-container">
+    <header class="table-header">
+        <h2>TODO List</h2>
+        <app-search (addItem)="insert($event)"></app-search>
+        <app-todo-interface (addItem)="insert($event)" (sortList)="reorderList()">
+        </app-todo-interface>
+        <button>{{action}} {{length}} items in {{benchmark}}ms</button>
+    </header>
+    <table [attr.id]="emptyList">
+        <thead>
+            <td>Activity</td>
+            <td>Priority</td>
+            <td>Comments</td>
+            <td>Time Created</td>
+        </thead>
+        <tbody>
+            <tr [attr.id]='bool'>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr *ngFor="let data of table">
+                <td>
+                    <div class="activity-name-container">
+                        <h2>{{data.activity}}</h2>
+                        <div class="img-wrapper">
+                            <img class='activity-name-image' src={{data.image}} />
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="remove">
+                        <h2 [ngStyle]="{ 'background-color': data['priority'] === 0 ?  'rgb(44, 219, 102)' 
+                    : data.priority === 1 ? 'rgb(44, 219, 102)' 
+                    : data.priority === 2 ? 'rgb(219, 245, 125)' 
+                    : data.priority === 3 ? 'rgb(219, 245, 125)' 
+                    : data.priority === 4 ? 'rgb(245, 96, 96)' 
+                    : data.priority === 5 ? 'rgb(245, 96, 96)' 
+                    : 'purple' }">{{data.priority}}</h2>
+                    </div>
+                </td>
+                <td>
+                    <ul *ngFor="let items of data.comments">
+                        <li>{{items}}</li>
+                    </ul>
+                </td>
+                <td>{{data.date?.toLocaleDateString('en-us', {hour: "numeric", minute:"numeric"})}}</td>
+                <td clickable (click)="removeIndex(data.activity, data.priority)">
+                    <div class="remove">
+                        <img id='remove'
+                            src="https://raw.githubusercontent.com/twbs/icons/9a2d13acc39ca084c981f0cd3f80d270af34bd49/icons/clipboard-minus.svg" />
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div [attr.id]="emptyList" class="helper">
+        <p id="helper">Your to do list is empty 😢 Interact with clipboard Icon to add items </p>
+    </div>
+</main>

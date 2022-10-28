@@ -1,0 +1,19 @@
+form {
+    color: white;
+    border: none;
+}
+
+.results {
+    cursor: pointer;
+    position: absolute;
+    max-height: 10rem;
+    background-color: grey;
+    width: 10rem;
+    padding: 0;
+    transform: translate(2rem, 0rem)
+}
+
+p {
+    padding: 0;
+    margin: 0.2rem;
+}

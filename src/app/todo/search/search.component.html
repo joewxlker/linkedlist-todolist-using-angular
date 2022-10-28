@@ -1,0 +1,11 @@
+<form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="search">
+            search
+        </label>
+        <input id="search" type="text" formControlName="search" (ngModelChange)="handleChange()">
+    </div>
+</form>
+<div clickable class="results" (click)="handleClick()">
+    <p *ngFor="let item of results">{{item}}</p>
+</div>

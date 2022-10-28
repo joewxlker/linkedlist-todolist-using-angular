@@ -1,0 +1,16 @@
+<div class="interface-container" [attr.id]='interface'>
+    <header class="interface-header">
+        <app-input-modal [inputModal]="inputModal" (toggleInterface)='toggleInputModal()'> </app-input-modal>
+        <button (click)="toggleInputModal()">custom</button>
+        <button (click)="toggleInterface()">back</button>
+    </header>
+    <ul>
+        <li *ngFor="let data of newList" (click)='handleClick(data.activity, data.image, data.priority)'>
+            <h2>{{ data.activity }} <img src={{data.image}} /></h2>
+        </li>
+    </ul>
+</div>
+<div [attr.id]='interface' (click)='toggleInterface();'></div>
+<button id='edit' (click)='toggleInterface()'><img
+        src="https://raw.githubusercontent.com/twbs/icons/9a2d13acc39ca084c981f0cd3f80d270af34bd49/icons/clipboard-plus.svg" /></button>
+<button id='edit' (click)="sortLists()"> <strong>SORT</strong></button>
