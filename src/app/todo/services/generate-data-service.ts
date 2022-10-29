@@ -11,7 +11,7 @@ export default class GenerateTestData {
     constructor() { }
 
     generateData() {
-        for (let i = 0; i < 20000; i++) {
+        for (let i = 0; i < 20; i++) {
             let index = Math.round(Math.random() * activities.length - 2);
             if (index < 0) index = 1;
             this.list[i] = new Rows(activities[index], 'https://raw.githubusercontent.com/twbs/icons/9a2d13acc39ca084c981f0cd3f80d270af34bd49/icons/egg-fried.svg', new Date(), [], Math.round(Math.random() * 6), 0);

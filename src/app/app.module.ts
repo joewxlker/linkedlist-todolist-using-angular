@@ -8,6 +8,8 @@ import { TodoInterfaceComponent } from './todo/todo-interface/todo-interface.com
 import { TodoComponent } from './todo/todo.component';
 import { InputModalComponent } from './todo/input-modal/input-modal.component';
 import { SearchComponent } from './todo/search/search.component';
+import { HomeComponent } from './home/home.component';
+import { SectionComponent } from './home/section/section.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { SearchComponent } from './todo/search/search.component';
     TodoInterfaceComponent,
     InputModalComponent,
     SearchComponent,
+    HomeComponent,
+    SectionComponent,
 
   ],
   imports: [

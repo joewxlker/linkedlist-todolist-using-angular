@@ -27,14 +27,14 @@ export class TodoComponent implements OnInit {
   constructor(private listService: LinkedListService, private generateTests: GenerateTestData) { }
 
   ngOnInit(): void {
+    this.setListState();
     this.action = 'Loaded'
     let start = performance.now();
-    this.testData = this.generateTests.generateData();
-    for (let i = 0; i < this.testData.length; i++) {
-      this.insert(this.testData[i])
-    }
-    this.length = this.listService.length;
-    this.benchmark = performance.now() - start;
+    // this.testData = this.generateTests.generateData();
+    // for (let i = 0; i < this.testData.length; i++) {
+    //   this.insert(this.testData[i])
+    // }
+    // this.length = this.listService.length;
   }
 
   insert(row: Rows) {

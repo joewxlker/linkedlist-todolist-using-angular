@@ -43,6 +43,7 @@ header h2 {
 .app-container {
     margin: auto;
     width: 80vw;
+    min-height: 80vh;
 }
 
 .table-header {
@@ -90,4 +91,8 @@ p {
     height: 10rem;
     border-radius: 10px;
     background-color: rgb(94, 148, 228);
+}
+
+main {
+    padding-top: 10rem;
 }

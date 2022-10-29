@@ -1,10 +1,52 @@
-<!-- Toolbar -->
-<div class="toolbar" role="banner">
+<!-- This nav gives you links to click, which tells the router which route to use (defined in the routes constant in  AppRoutingModule) -->
 
-</div>
+<!-- <router-outlet></router-outlet> -->
+<!-- The routed views render in the <router-outlet> -->
+
 
 <div class="content" role="main">
-  <app-todo></app-todo>
-</div>
+  <header class="site-header">
+    <div class="site-logo">
+      <h2>JW</h2>
+    </div>
+    <nav class="site-nav">
+      <h4 (mouseenter)="dropdown=false"><a routerLink="/" routerLinkActive="active"
+          ariaCurrentWhenActive="page">Home</a></h4>
+      <h4 (mouseenter)="dropdown=true">
+        Applications
+        <img
+          src="https://raw.githubusercontent.com/twbs/icons/9a2d13acc39ca084c981f0cd3f80d270af34bd49/icons/chevron-compact-down.svg"
+          alt="" />
+      </h4>
+      <h4 (mouseenter)="dropdown=false"> <a routerLink="/docs" routerLinkActive="active"
+          ariaCurrentWhenActive="page">Documentation</a></h4>
+    </nav>
+  </header>
+  <div class="dropdown" [attr.id]="dropdown">
+    <a routerLink="/todo" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <h5>Todo-List</h5>
+    </a>
+  </div>
+  <div class="toggle" [attr.id]="dropdown" (mouseenter)="dropdown=false"></div>
+  <router-outlet>
 
-<router-outlet></router-outlet>
+  </router-outlet>
+  <footer class="site-footer">
+    <nav>
+      <img class="footer-nav-img"
+        src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/d3a7818c253fcbafff9ebd1d4abb2866c192e1d7/svgs/brands/github.svg"
+        alt="" />
+      <img class="footer-nav-img"
+        src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/d3a7818c253fcbafff9ebd1d4abb2866c192e1d7/svgs/brands/linkedin.svg"
+        alt="" />
+      <img class="footer-nav-img"
+        src="https://raw.githubusercontent.com/FortAwesome/Font-Awesome/d3a7818c253fcbafff9ebd1d4abb2866c192e1d7/svgs/brands/twitter.svg"
+        alt="" />
+    </nav>
+    <div class="email">
+      <button>
+        <h3>Send me an email!</h3>
+      </button>
+    </div>
+  </footer>
+</div>

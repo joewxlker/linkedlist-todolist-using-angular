@@ -1,0 +1,37 @@
+<main class="home-main">
+    <div class="landing-container">
+        <div class="landing-left">
+            <p>O(n^2) - Quadratic time complexity</p>
+            <div class="code-container">
+                <h3 [attr.id]="data.indent === 1 ? 'one' : data.indent === 2 ? 'two' : data.indent === 3 ? 'three' : data.indent === 4 ? 'four' : data.indent === 4 && 'five' "
+                    [attr.class]="visible" *ngFor="let data of formattedData">
+                    {{data.data}}</h3>
+            </div>
+        </div>
+        <div class="landing-right">
+            <h1>REAL WORLD USE-CASES FOR JAVA-SCRIPT ALGORITHMS AND DATA STRUCTURES</h1>
+            <h3>By Joseph Walker</h3>
+            <div>
+                <button title="opens a new tab in the browser">
+                    <span id='button-content'>
+                        <img src="https://raw.githubusercontent.com/twbs/icons/9a2d13acc39ca084c981f0cd3f80d270af34bd49/icons/arrow-right.svg"
+                            alt="link to source code">
+                        <h3>Source Code</h3>
+                    </span>
+                </button>
+                <button title="opens a new tab in the browser">
+                    <span id='button-content'>
+                        <img src="https://raw.githubusercontent.com/twbs/icons/9a2d13acc39ca084c981f0cd3f80d270af34bd49/icons/arrow-right.svg"
+                            alt="link to source code">
+                        <h3>Documentation</h3>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+<div class="section-container">
+    <app-section [title]="'Linked Lists'" [button]="'See more'"
+        [description]="'PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app'">
+    </app-section>
+</div>

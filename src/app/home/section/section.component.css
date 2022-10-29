@@ -1,0 +1,41 @@
+section {
+    width: 80vw;
+    margin: auto;
+    margin-top: 8rem;
+    margin-bottom: 8rem;
+    min-height: 60vh;
+    background-color: rgb(44, 44, 44);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+section h2 {
+    color: black;
+    margin: 0;
+    font-size: xx-large;
+}
+
+section h3 {
+    color: black;
+    margin: 0;
+    font-size: x-large;
+}
+
+section p {
+    margin: 1;
+}
+
+section .right {
+    padding: 5rem;
+    margin: 7%;
+    background-color: rgb(231, 231, 231);
+}
+
+section button {
+    height: 3rem;
+    width: 10rem;
+    background-color: rgb(22, 22, 22);
+    color: white;
+}
