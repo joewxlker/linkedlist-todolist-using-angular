@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   public dropdown = false;
+  public smallScreenDropdown = false;
 }

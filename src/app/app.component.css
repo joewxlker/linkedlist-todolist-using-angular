@@ -56,13 +56,13 @@
     transform: translateY(4.6rem);
     transition: transform 0.3s;
     background-color: white;
-    position: absolute;
+    position: fixed;
     right: 32rem;
 }
 
 .dropdown#false {
     transform: translateY(-5rem);
-    position: absolute;
+    position: fixed;
 }
 
 .site-footer {
@@ -125,7 +125,41 @@ footer nav {
     color: rgb(20, 109, 136);
 }
 
+.smallScreenMenu#true {
+    display: none;
+}
+
+.small-device-button {
+    display: none;
+}
+
 @media only screen and (max-width: 1200px) {
+
+    .smallScreenMenu#true {
+        display: grid;
+        opacity: 100%;
+        transform: translate(-50%, 0);
+        height: 30vh;
+        background-color: white;
+        width: 80vh;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        transition: transform 0.5s;
+    }
+
+    .smallScreenMenu {
+        box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.411);
+        left: 50%;
+        transform: translate(-50%, -10rem);
+        position: fixed;
+    }
+
+
+    .site-header {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .site-nav {
         display: none;
     }
@@ -133,6 +167,44 @@ footer nav {
     .dropdown {
         display: none;
     }
+
+    .small-device-button {
+        padding: 0.5rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        grid-column-start: 3;
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: auto;
+    }
+
+    .one#true {
+        transition: all 0.3s;
+        transform: rotate(45deg) translate(0.4rem, 0.6rem);
+        margin: 0;
+        width: 2rem;
+    }
+
+    .two#true {
+        display: none;
+    }
+
+    .three#true {
+        transition: all 0.3s;
+        transform: rotate(-45deg) translate(-0.16rem, -0.1rem);
+        width: 2rem;
+    }
+
+    .small-device-button div {
+        background-color: rgba(0, 0, 0, 0.411);
+        width: 100%;
+        height: 2px;
+        border-radius: 100px;
+        margin: auto;
+    }
+
+    .small-device-button#true {}
 }
 
 @media only screen and (max-width: 800px) {}

@@ -21,7 +21,14 @@
       <h4 (mouseenter)="dropdown=false"> <a routerLink="/docs" routerLinkActive="active"
           ariaCurrentWhenActive="page">Documentation</a></h4>
     </nav>
+    <button class="small-device-button" [attr.id]="smallScreenDropdown"
+      (click)="smallScreenDropdown = !smallScreenDropdown">
+      <div class="one" [attr.id]="!smallScreenDropdown"></div>
+      <div class="two" [attr.id]="!smallScreenDropdown"></div>
+      <div class="three" [attr.id]="!smallScreenDropdown"></div>
+    </button>
   </header>
+  <div class="smallScreenMenu" [attr.id]="smallScreenDropdown"></div>
   <div class="dropdown" [attr.id]="dropdown">
     <a routerLink="/todo" routerLinkActive="active" ariaCurrentWhenActive="page">
       <h5>Todo-List</h5>

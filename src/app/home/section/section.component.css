@@ -11,6 +11,28 @@ section {
     text-align: center;
 }
 
+.false #left {
+    grid-column-start: 1;
+}
+
+.false #right {
+    grid-column-start: 2;
+}
+
+.true #left {
+    grid-column-start: 1;
+}
+
+.true #right {
+    grid-column-start: 2;
+}
+
+section button {
+    margin: 0.2rem;
+    background-color: rgb(33, 112, 202) !important;
+    font-size: 1.6vh;
+}
+
 section h2 {
     color: black;
     margin: 0;
@@ -38,4 +60,36 @@ section button {
     width: 10rem;
     background-color: rgb(22, 22, 22);
     color: white;
+}
+
+@media only screen and (max-width: 1200px) {
+    section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .right {
+        padding: 3rem !important;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    section {
+        width: 100vw;
+    }
+
+    .right {
+        padding: 3rem !important;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .right {
+        margin: 0 !important;
+    }
 }

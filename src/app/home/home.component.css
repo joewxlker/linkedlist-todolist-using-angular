@@ -23,6 +23,7 @@
 .landing-left {
     text-align: center;
     padding-top: 14rem;
+    overflow: hidden;
     width: 100%;
 }
 
@@ -160,6 +161,10 @@ h1 {
         width: 100%;
     }
 
+    .landing-right {
+        border-radius: 0;
+    }
+
 
     .landing-right #button-content {
         transform: translateX(-24vw);
@@ -181,13 +186,14 @@ h1 {
     .landing-container {
         width: 100%;
         max-height: fit-content;
-        min-height: 90rem;
+        min-height: 70rem;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 2fr;
     }
 
     .landing-right {
+        border-radius: 0;
         grid-row-start: 1;
         padding-top: 5rem;
     }
@@ -197,8 +203,30 @@ h1 {
     }
 
     .landing-left {
-        padding-top: 1rem;
+        padding-top: 2rem;
         margin-top: 0;
-        height: 50vh;
+        height: 60vh;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+
+    .landing-left {
+        display: none;
+    }
+
+    .landing-right {
+        height: 24rem;
+        padding-top: 3rem;
+        font-size: 13px;
+    }
+
+
+    .landing-container {
+        height: 24rem !important;
+        min-height: 24rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        padding-top: 0;
     }
 }

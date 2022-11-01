@@ -40,38 +40,32 @@ export class HomeComponent implements OnInit {
     this.formattedData = [];
     this.indent = 0;
     let data: string[] = [];
-    let limit = this.data[iteration][this.count].length
-    let count = 0;
-    const interval: any = setInterval(() => {
-      if (this.count === this.data[iteration].length) return clearInterval(interval);
-      if (count === limit) {
-        data = [];
-        count = 0;
-        this.count++
-        limit = this.data[iteration][this.count].length
+    const interval: any = window.setInterval(() => {
+      if (this.count === this.data[iteration].length) {
+        return window.clearInterval(interval);
       }
-      data.push(this.data[iteration][this.count][count]);
-      if (data.length === this.data[iteration][this.count].length) this.formatData(data);
-      count++
-    })
+      data = [];
+      this.count++
+      this.formatData(this.data[iteration][this.count]);
+    }, 350)
     window.setTimeout(() => {
       this.visible = false;
     }, 9000)
   }
 
-  formatData(data: string[]) {
-    const value = data.join('');
+  formatData(data: string) {
+    const value = data;
     if (this.count === 1) this.indent++
     if (value.slice(0, 3) === 'for' || value.slice(0, 3) === 'if ' && this.count !== 1) {
       this.indent++
-      this.formattedData.push({ indent: this.indent, data: data.join('') })
+      this.formattedData.push({ indent: this.indent, data: data })
       return
     }
     if (value.slice(data.length - 1, data.length) === '}') {
       this.indent--;
-      this.formattedData.push({ indent: this.indent, data: data.join('') })
+      this.formattedData.push({ indent: this.indent, data: data })
       return
     }
-    this.formattedData.push({ indent: this.indent, data: data.join('') })
+    this.formattedData.push({ indent: this.indent, data: data })
   }
 }

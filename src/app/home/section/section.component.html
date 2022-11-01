@@ -1,13 +1,14 @@
-<section>
-    <div class="left">
+<section [attr.class]="reverse" [attr.style]="sectionStyle">
+    <div id="left" class="left">
 
     </div>
-    <div class="right">
+    <div id="right" class="right">
         <div>
             <h2>{{title}}</h2>
             <h3>{{subHeadings![0]}}</h3>
             <p>{{description}}</p>
-            <button>{{button}}</button>
+            <button>{{button![0]}}</button>
+            <button>{{button![1]}}</button>
         </div>
     </div>
 </section>

@@ -1,8 +1,8 @@
 <main class="home-main">
     <div class="landing-container">
         <div class="landing-left">
-            <p>O(n^2) - Quadratic time complexity</p>
             <div class="code-container">
+                <p>O(n^2) - Quadratic time complexity</p>
                 <h3 [attr.id]="data.indent === 1 ? 'one' : data.indent === 2 ? 'two' : data.indent === 3 ? 'three' : data.indent === 4 ? 'four' : data.indent === 4 && 'five' "
                     [attr.class]="visible" *ngFor="let data of formattedData">
                     {{data.data}}</h3>
@@ -30,8 +30,7 @@
         </div>
     </div>
 </main>
-<div class="section-container">
-    <app-section [title]="'Linked Lists'" [button]="'See more'"
-        [description]="'PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app PS C:\Users\joewx\desktop\webapps\angular-app> cd my-app'">
-    </app-section>
-</div>
+<app-section [title]="'Single Linked Lists'" [subHeadings]="['Data Structure']"
+    [button]="['View Live', 'View Documentation']"
+    [description]="'A linked list represents a linear data structure consisting of nodes, Each node holds a value attribute and a next attribute. This next attribute provides linkage and so it gains its name.'">
+</app-section>
